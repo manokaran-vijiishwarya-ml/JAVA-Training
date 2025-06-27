@@ -102,16 +102,25 @@ Explanation:
 
 
 Stack:
-  i = 1 => Primitive local variable in main()
-  a	=> Reference to Integer object
-  obj => Reference to Example object
-  i in display(int i) => Local parameter (primitive)
-  obj in display(Example obj) => Local parameter (reference)
+
+i = 1 => Primitive local variable in main()
+
+a	=> Reference to Integer object
+
+obj => Reference to Example object
+
+i in display(int i) => Local parameter (primitive)
+
+obj in display(Example obj) => Local parameter (reference)
 
 Heap:
-  new Example() => object	Created explicitly with new
-  Field i = 2 (later becomes 5) =>	Instance variable of Example object
-  Integer a	=> Autoboxed value of int i = 1
+
+new Example() => object	Created explicitly with new
+
+Field i = 2 (later becomes 5) =>	Instance variable of Example object
+
+Integer a	=> Autoboxed value of int i = 1
+
 
 
 
