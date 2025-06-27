@@ -1,3 +1,5 @@
+CONSTRUCTOR AND TYPES
+
 A class can have multiple constructors with the same name but with different parameter lists.
 
 Parameters can differ by:
