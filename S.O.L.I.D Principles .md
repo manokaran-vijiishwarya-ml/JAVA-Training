@@ -1,5 +1,5 @@
 S - SINGLE RESPONSIBLITY PRINCIPLE => A class should have one and only one reason to change.
-
+```java
 class Employee {
     private String name;
     private double salary;
@@ -31,10 +31,10 @@ public class SRPExample {
 
     }
 }
-
+```
 
 O - OPEN / CLOSE PRINCIPLE => Software entities should be open for extension, but closed for modification. (i.e) Add new function should not modify the existing code.
-
+``` java
 class Employee {
     private String name;
     private double salary;
@@ -79,9 +79,9 @@ public class OCExample {
         System.out.println("Bonus Salary: " + bonus.calculateSalary(emp));
     }
 }
-
+```
 L - LISKOV SUBSTITUITION PRINCIPLE => Parent class feature inherits in child class should not change the parent class behaviour.
-
+```java
 class Employee {
     private String name;
     private double salary;
@@ -125,9 +125,10 @@ public class Liskov {
         System.out.println("Bonus Salary: " + calculator.calculateSalary(emp));
     }
 }
+```
 
 I - INTERFACE SEGREGATION PRINCIPLE => Should not be forced to depend on methods they do not use.
-
+``` java
 class Employee {
     private String name;
     private double salary;
@@ -146,34 +147,41 @@ class Employee {
     }
 }
 
-interface SalaryCal {
-    double calculateSalary(Employee employee);
+interface MonthSalary {
+    double calculateMonthlySalary(Employee employee);
 }
 
-class RegularSalary implements SalaryCal {
-    public double calculateSalary(Employee employee) {
+interface  HourSalary{
+    double calculateHourlySalary(Employee employee, int hoursWorked);
+}
+
+class FullTimeEmployee implements MonthSalary {
+    public double calculateMonthlySalary(Employee employee) {
         return employee.getSalary() * 2;
     }
 }
 
-class BonusSalary implements SalaryCal {
-    public double calculateSalary(Employee employee) {
-        return employee.getSalary() * 2 + 5000;
+class PartTimeEmployee implements  HourSalary{
+    public double calculateHourlySalary(Employee employee, int hoursWorked) {
+        return hoursWorked * 100;
     }
 }
 
-public class Liskov {
+public class InterfaceSegregation {
     public static void main(String[] args) {
         Employee emp = new Employee("Viji", 20000);
-        SalaryCal calculator = new RegularSalary();
-        System.out.println("Salary: " + calculator.calculateSalary(emp));   
-        calculator = new BonusSalary();
-        System.out.println("Bonus Salary: " + calculator.calculateSalary(emp));
+        
+        MonthSalary fullTime = new FullTimeEmployee();
+        System.out.println("Full-time Salary: " + fullTime.calculateMonthlySalary(emp));
+
+        HourSalary partTime = new PartTimeEmployee();
+        System.out.println("Part-time Salary for 50 hours: " + partTime.calculateHourlySalary(emp, 50));
     }
 }
+```
 
 D - DEPENDENCY INJECTION => High-level modules should not depend on low-level modules. Both should depend on abstractions.
-
+``` java
 class Employee {
     private String name;
     private double salary;
@@ -222,5 +230,5 @@ public class DependencyInversion {
         System.out.println("Final Salary: " + service.getSalary(emp));
     }
 }
-
+```
 
