@@ -46,9 +46,9 @@ class Hospital {
         System.out.println("Hospital Information");
     }
     
-    void commonFacilities() {
-        System.out.println("24/7 Emergency Services");
-    }
+    // void commonFacilities() {
+    //     System.out.println("24/7 Emergency Services");
+    // }
 }
 
 class Doctor extends Hospital {
@@ -66,19 +66,12 @@ class Doctor extends Hospital {
 // =============================================================================
 
 class MedicalStaff extends Hospital {
-    void staffInfo() {
-        System.out.println("Medical Staff Information");
-    }
-    
     void workShift() {
         System.out.println("Working 8-hour shift");
     }
 }
 
 class Surgeon extends MedicalStaff {
-    void surgeonInfo() {
-        System.out.println("Surgeon Information");
-    }
     
     void performSurgery() {
         System.out.println("Performing surgery");
@@ -90,10 +83,6 @@ class Surgeon extends MedicalStaff {
 // =============================================================================
 
 class Nurse extends Hospital {
-    void nurseInfo() {
-        System.out.println("Nurse Information");
-    }
-    
     void patientCare() {
         System.out.println("Providing patient care");
     }
@@ -112,12 +101,12 @@ class Pharmacist extends Hospital {
 
 interface Diagnosable {
     void diagnose();
-    void useEquipment();
+
 }
 
 interface Treatable {
     void treat();
-    void followProtocol();
+ 
 }
 
 class ConsultantDoctor extends Doctor implements Diagnosable, Treatable {
@@ -127,19 +116,10 @@ class ConsultantDoctor extends Doctor implements Diagnosable, Treatable {
     }
     
     @Override
-    public void useEquipment() {
-        System.out.println("Using diagnostic equipment");
-    }
-    
-    @Override
     public void treat() {
         System.out.println("Consultant treating patient");
     }
     
-    @Override
-    public void followProtocol() {
-        System.out.println("Following treatment protocol");
-    }
 }
 
 // =============================================================================
@@ -148,7 +128,6 @@ class ConsultantDoctor extends Doctor implements Diagnosable, Treatable {
 
 interface EmergencyResponder {
     void respondToEmergency();
-    void handleCriticalCase();
 }
 
 class EmergencyDoctor extends Doctor implements EmergencyResponder {
@@ -157,10 +136,6 @@ class EmergencyDoctor extends Doctor implements EmergencyResponder {
         System.out.println("Responding to emergency");
     }
     
-    @Override
-    public void handleCriticalCase() {
-        System.out.println("Handling critical case");
-    }
 }
 
 // =============================================================================
