@@ -1,3 +1,9 @@
+Constructor:
+
+A constructor is a special block of code that is called when an object is created. Its main job is to initialize the object, to set up its internal state, or to assign default values to its attributes. This process happens automatically when we use the "new" keyword to create an object.
+
+Order Of constructor execution:
+
 ```java
 class UG{
      UG() {
