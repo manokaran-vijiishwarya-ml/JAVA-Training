@@ -6,7 +6,7 @@ Stack:
 Heap:
    Stores all objects and instance variables.
 
-
+``` java
 public class Example {
     int i=2;
     void display(int i){
@@ -32,6 +32,7 @@ public class Example {
         System.out.println("After method call: " + obj.i);
     }    
 }
+```
 
 Output:
   1
