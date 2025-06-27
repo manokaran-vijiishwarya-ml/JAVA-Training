@@ -175,3 +175,38 @@ public class InheritanceNew {
     }
 }
 ```
+OUTPUT:
+
+SINGLE INHERITANCE 
+
+Hospital Information
+
+Doctor Information
+
+MULTILEVEL INHERITANCE 
+
+Hospital Information
+
+Performing surgery
+
+HIERARCHICAL INHERITANCE  
+
+Hospital Information
+
+Providing patient care
+
+Hospital Information
+
+Pharmacist Information
+
+MULTIPLE INHERITANCE (Interfaces)  
+
+Doctor Information
+
+Consultant diagnosing patient
+
+HYBRID INHERITANCE 
+
+Doctor prescribing medicine
+
+Responding to emergency
