@@ -72,12 +72,14 @@ Explanation:
     
     
   obj.display(i):
-    
+    ``` java
     void display(int i) {
         System.out.println(i);  // prints 1
         i = 5;
         System.out.println("After:" + i); 
     }
+    ```
+    
     Here, the method parameter int i shadows the variable i from main.
     
     The value 1 is passed by value (i.e., a copy) → so changes to i inside display() do not affect main's i.
@@ -85,12 +87,14 @@ Explanation:
     i inside display() is stored in the stack as a methods local variable
 
    obj.display(obj):
-   
+     ``` java
      void display(Example obj) {
         System.out.println(obj.i); // prints 2
         obj.i = 5;
         System.out.println("After:" + obj.i); // prints 5
     }
+    ```
+    
       obj (in the method) is a reference copy of the same obj from main.
       
       So obj.i = 5; modifies the original object on the heap.
