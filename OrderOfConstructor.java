@@ -15,7 +15,7 @@ class PG extends UG {
     }
 
     PG(String s) {
-        // super(s);  
+        this(); // will call the default constructor of PG 
         System.out.println("PG parameterized constructor with " + s);
     }
 }
@@ -49,6 +49,8 @@ public class OrderOfConstructor {
 OUTPUT:
 
 UG default constructor called
+
+PG default constructor called
      
 PG parameterized constructor with Viji
      
