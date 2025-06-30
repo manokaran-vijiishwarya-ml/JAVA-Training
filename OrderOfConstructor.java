@@ -1,4 +1,4 @@
-```java
+
 class UG {
     UG() {
         System.out.println("UG default constructor called");
@@ -44,7 +44,7 @@ public class OrderOfConstructor {
        
     }
 }
-```
+
 
 OUTPUT:
 
