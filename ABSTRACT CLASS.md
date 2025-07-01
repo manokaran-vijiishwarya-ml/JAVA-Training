@@ -15,3 +15,7 @@ You want to provide some logic, but force subclasses to complete it.
 
 You want multiple subclasses to inherit common code.
 
+It allows constructors.
+
+Partially implement methods.
+
