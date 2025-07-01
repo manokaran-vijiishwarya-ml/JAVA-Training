@@ -143,3 +143,35 @@ public class Reflection{
     }
 }
 ```
+output:
+Class Name: Dog
+
+Class Modifiers: 
+
+Superclass: java.lang.Object
+
+Implemented Interfaces: Animal
+
+Constructors:
+
+Constructor: Dog
+
+Parameter count: 0
+
+Constructor: Dog
+
+Parameter count: 1
+
+Methods:
+
+Method Name: disp
+
+Return Type: void
+
+Fields:
+
+Field Name: breed
+
+Type: java.lang.String
+
+Modifier: private
