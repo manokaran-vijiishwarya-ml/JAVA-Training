@@ -135,6 +135,7 @@ public class Reflection{
                 System.out.println("Field Name: " + f.getName());
                 System.out.println("Type: " + f.getType().getName());
                 System.out.println("Modifier: " + Modifier.toString(f.getModifiers()));
+                 // if f.getModifiers alone is used then it will print some integer values say 1 for public, 2 for private, 4 for protected.
             }
 
         } catch (ClassNotFoundException e) {
