@@ -67,7 +67,7 @@ Including Interface, classname, modifier, superclass, constructors, methods, fie
 import java.lang.reflect.*;
 
 interface Animal {
-    public void disp();
+    public abstract void disp();
 }
 
 class Dog implements Animal {
@@ -82,10 +82,15 @@ class Dog implements Animal {
     public void disp() {
         System.out.println("Barking");
     }
+    private void test(String message, int count) {
+        System.out.println("Message: " + message + ", Count: " + count);
+        // System.out.println("This is a private method");
+    }
 }
 
 public class Reflection{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+
         try {
             // Getting the class object using reflection
             Class<?> obj = Class.forName("Dog");
@@ -99,13 +104,13 @@ public class Reflection{
 
             // Superclass
             System.out.println("Superclass: " + obj.getSuperclass().getName());
-
+            
             // Interfaces
             Class<?>[] interfaces = obj.getInterfaces();
             if (interfaces.length == 0) {
                 System.out.println("No interfaces implemented.");
             } else {
-                System.out.println("Implemented Interfaces:");
+                System.out.println("Interfaces:");
                 for (Class<?> i : interfaces) {
                     System.out.println(i.getName());
                 }
@@ -127,6 +132,18 @@ public class Reflection{
                 System.out.println("Return Type: " + m.getReturnType().getName());
 
             }
+            // Create an instance of the Dog class
+            Object dogInstance = obj.getDeclaredConstructor().newInstance();
+            
+            // Get the private method 'test'
+            Method privateMethod = obj.getDeclaredMethod("test", String.class, int.class);   
+            privateMethod.setAccessible(true); // Allow access to private method   
+            try {
+                // Pass arguments to the 'test' method
+                privateMethod.invoke(dogInstance, "Hello Reflection", 5); // Pass arguments
+            } catch (IllegalAccessException | InvocationTargetException e) {
+                e.printStackTrace();
+            }
 
             // Fields
             System.out.println("\nFields:");
@@ -135,8 +152,8 @@ public class Reflection{
                 System.out.println("Field Name: " + f.getName());
                 System.out.println("Type: " + f.getType().getName());
                 System.out.println("Modifier: " + Modifier.toString(f.getModifiers()));
-                 //System.out.println(f.getModifiers());
-                 // if f.getModifiers alone is used then it will print some integer values say 1 for public, 2 for private, 4 for protected.
+                //System.out.println(f.getModifiers());
+                    // if f.getModifiers alone is used then it will print some integer values say 1 for public, 2 for private, 4 for protected.
             }
 
         } catch (ClassNotFoundException e) {
@@ -144,6 +161,7 @@ public class Reflection{
         }
     }
 }
+
 ```
 output:
 Class Name: Dog
@@ -152,7 +170,7 @@ Class Modifiers:
 
 Superclass: java.lang.Object
 
-Implemented Interfaces: Animal
+Interfaces: Animal
 
 Constructors:
 
@@ -166,9 +184,15 @@ Parameter count: 1
 
 Methods:
 
+Method Name: test 
+
+Return Type: void
+
 Method Name: disp
 
 Return Type: void
+
+Message: Hello Reflection, Count: 5
 
 Fields:
 
@@ -177,3 +201,7 @@ Field Name: breed
 Type: java.lang.String
 
 Modifier: private
+
+
+The exception java.lang.NoSuchMethodException: Dog.<init>() occurs because the Dog class does not have a default (no-argument) constructor, and the reflection code is trying to create an instance of the Dog class using obj.getDeclaredConstructor().newInstance().
+
