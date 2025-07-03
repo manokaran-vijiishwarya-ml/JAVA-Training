@@ -1,3 +1,4 @@
+
 Exception handling in Java allows developers to manage runtime errors effectively by using mechanisms like
 try-catch block, finally block, throwing Exceptions, Custom Exception handling, etc.  
 
@@ -156,3 +157,16 @@ Caught CustomException: Underage - Custom Exception thrown
 Caught ArithmeticException: / by zero
 
 finally block executed (always runs)
+
+
+throws -> delegate exception handling to caller and declare method might throw exeption so caller should handle it
+
+throw -> to manually write an exception
+
+throws without throw -> valid
+
+throw without throws -> invalid
+
+final -> to make variable or constant immutable
+
+finally -> always execute after try catch block
