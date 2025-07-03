@@ -61,3 +61,12 @@ E	-> Method-level	-> For printing any element	-> 3.14, "Hello"
 K	-> Method-level	-> Key in a key-value pair (map style) -> "Name", 101
 
 V -> Method-level	-> Value in key-value pair ->	"Viji", true
+
+
+Used when code works with multiple types.
+
+Ensures type safety.
+
+write code once and use it with multiple types
+
+
