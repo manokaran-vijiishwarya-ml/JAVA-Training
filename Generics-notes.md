@@ -2,9 +2,11 @@ Generics -> used to pass any type to class or method
 
 Generic has two wildcard:
 
-  1. Lower Bound(Super)
-    
-  2. Upper Bound (Extends)
+1. Lower Bound(Super)
+  
+2. Upper Bound (Extends)
+
+     
 
 1. Lower Bound -> It will accept the present class type and its super types alone not the corresponding subtypes. -> only write
  
