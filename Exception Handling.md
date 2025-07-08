@@ -173,4 +173,5 @@ finally -> always execute after try catch block
 
 
 Checked exception only try catch
+
 Unchecked optional both trycatch and throws is used to handle it
