@@ -828,3 +828,40 @@ KEY CONCEPTS DEMONSTRATED:
  *    - Abstract class reference can hold objects of concrete subclasses
  *    - Method calls resolved at runtime based on actual object type
  */
+
+ comparable and comparator
+
+both are interface
+Comparable is used with compareTo and allows only natural ordering -> single sorting order 
+Comparator is used with Compare used with multiple sorting techniques -> multiple sorting order
+The Collections.sort() method is used to sort collections such as ArrayList.
+This method is also based on the natural ordering of the elements or a custom comparator.
+
+
+
+Collection vs Collections
+
+Collections - class
+
+Collection - interface 
+
+➤ What is Collection?
+
+* Collection is a root interface in the Java Collection Framework.
+* It represents a group of objects (like a bag of items).
+* Subinterfaces: List, Set, Queue.
+  
+➤ What is Collections?
+
+* Collections is a utility class (in java.util.Collections) that provides static methods to operate on collections (like sorting, reversing, shuffling, etc.).
+  
+➤ Why are they used?
+
+* Collection: For organizing and storing data (e.g., arrays with dynamic size).
+* Collections: For common operations like sorting, searching, min/max, etc.
+  
+➤ When to use?
+
+* Use Collection when you want to store multiple items (like ArrayList, HashSet, etc.).
+* Use Collections when you want to manipulate those collections (e.g., Collections.sort(list))
+
