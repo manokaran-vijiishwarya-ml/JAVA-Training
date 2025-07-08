@@ -2,25 +2,10 @@ Generics -> used to pass any type to class or method
 
 Generic has two wildcard:
 
-1. Lower Bound(Super)
-  
-2. Upper Bound (Extends)
-
-     
-
-1. Lower Bound -> It will accept the present class type and its super types alone not the corresponding subtypes. -> only write
+1. Lower Bound -> It will accept the present class type and its super types alone not the corresponding subtypes. -> only write -> Super
  
-2. Upper Bound -> It will accept the current type and its sub class type alone, super is not supported. -> only read
-
-<?> -> it will accept of any type
-
-<? extends T> -> It will accept of type T and its sub type
-
-<? super T> -> It will accept type T and its super type
-
-Generics<T> n = new Generics<>();
-
-<> -> diamond operator and it must take the type mention in left side. 
+2. Upper Bound -> It will accept the current type and its sub class type alone, super is not supported. -> only read -> Extends
+ 
 
 left side its mandatory to represent the type but in right side to avoid repetition we are not mentioning and it will automatically take the type from left <> i.e. <T>
 
