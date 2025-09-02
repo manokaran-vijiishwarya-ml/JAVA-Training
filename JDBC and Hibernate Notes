@@ -1,0 +1,84 @@
+ JDBC and Hibernate
+
+ JDBC (Java Database Connectivity)
+
+JDBC is a Java API that allows Java applications to connect and interact with relational databases. It provides methods for querying and updating data in databases.
+
+A relational database is a type of database that stores data in tables (called relations), 
+where each table consists of rows and columns. Each row represents a record, and each column represents a field or attribute of the data.
+
+ How JDBC works:
+1. Load the driver
+2. Establish connection
+3. Create statements
+4. Execute queries
+5. Process results
+6. Close resource
+
+Hibernate
+
+Hibernate is an Object-Relational Mapping (ORM) framework that maps Java objects to database tables, eliminating the need to write SQL queries manually.
+
+ How Hibernate works:
+1. Create entity classes
+2. Configur Hibernate
+3. Create SessionFactory
+4. Open Session
+5. Perform operations
+6. Close resources
+
+
+When to use JDBC
+- Simple applications with few db operations
+- When you need complete control over SQL
+- Small projects with simple database interactions
+
+When to use Hibernate
+- Complex applications with many database operations
+- When you want to focus on business logic rather than SQL
+- Large enterprise applications
+- When you need caching for performance
+- Applications requiring complex object relationships
+
+Merits and Demerits
+
+ JDBC Merits:
+- Direct control over SQL queries
+- Lower memory overhead
+- Simpler to understand initially
+
+ JDBC Demerits:
+- More boilerplate code
+- Manual resource management
+- Manual mapping between result sets and objects
+- SQL queries are not type-checked
+- Database-specific SQL may reduce portability
+
+Hibernate Merits:
+- Automatic ORM
+- Less code to write and maintain
+- Built-in connection pooling and caching
+- Lazy loading capabilities
+- Automatic transaction management
+
+ Hibernate Demerits:
+- Steeper learning curve
+- Can be overkill for simple applications
+- Performance overhead for some operations
+
+ ORM:
+What is ORM?
+ORM (Object-Relational Mapping) is a programming technique that allows you to interact with a relational database using the object-oriented paradigm 
+of your programming language (like Java, Python, etc.).
+It acts as a bridge between your code (objects/classes) and the database (tables/rows).
+
+Why ORM?
+Object-oriented languages use objects, while relational databases use tables. Mapping between these two models manually is repetitive and error-prone.
+ORM automates SQL generation, CRUD operations, and mapping, reducing boilerplate code.
+Changes in the database or code structure are easier to manage.
+
+
+
+
+
+
